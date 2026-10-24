@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Channel Points Auto Claimer for Twitch",
+  "version": "1.0.0",
+  "description": "Automatically clicks the channel points bonus chest on Twitch.",
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.twitch.tv/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_title": "Channel Points Auto Claimer",
+    "default_popup": "popup.html"
+  }
+}
